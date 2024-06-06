@@ -1,18 +1,26 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, Flex, Text, VStack, Link, IconButton } from "@chakra-ui/react";
+import { FaHome, FaInfoCircle } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.xl" p={4}>
+      <Flex as="nav" bg="blue.500" color="white" p={4} justifyContent="space-between" alignItems="center">
+        <Text fontSize="xl" fontWeight="bold">MyApp</Text>
+        <Box>
+          <Link href="/" p={2}>
+            <IconButton aria-label="Home" icon={<FaHome />} colorScheme="whiteAlpha" />
+          </Link>
+          <Link href="/about" p={2}>
+            <IconButton aria-label="About" icon={<FaInfoCircle />} colorScheme="whiteAlpha" />
+          </Link>
+        </Box>
+      </Flex>
+      <Container centerContent maxW="container.md" height="80vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+        <VStack spacing={4}>
+          <Text fontSize="2xl">Welcome to MyApp</Text>
+          <Text>This is your starting point. Use the navigation bar to explore.</Text>
+        </VStack>
+      </Container>
     </Container>
   );
 };
